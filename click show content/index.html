@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #btn_mais_videos{
+    cursor: pointer;
+    border: 1px solid green;
+    padding: 8px;    
+  }
+</style>
+<body>
+  <div id="btn_mais_videos">    
+    <h3 class="title">ASSISTA MAIS VÍDEOS</h3>
+  </div>
+  <div id="content_mais_videos" style="display: none">
+    This content will be shown when the button is clicked.
+  </div>
+  
+  <script>
+    // document.getElementById("btn_mais_videos").addEventListener("click", function() {
+    //   var content = document.getElementById("content_mais_videos");
+    //   if (content.style.display === "none") {
+    //     content.style.display = "block";
+    //   } else {
+    //     content.style.display = "none";
+    //   }
+    // });
+
+    let btn_click = document.querySelector("#btn_mais_videos");
+
+    btn_click.addEventListener("click", function(){
+      var content = document.getElementById("content_mais_videos");
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    })
+
+
+  </script>
+</body>
+</html>
