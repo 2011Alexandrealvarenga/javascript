@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" class="js-date" maxlength="10" />
+
+  <script>
+    var input = document.querySelectorAll('.js-date')[0];
+  
+    var dateInputMask = function dateInputMask(elm) {
+      elm.addEventListener('keypress', function(e) {
+        if(e.keyCode < 47 || e.keyCode > 57) {
+          e.preventDefault();
+        }
+        
+        var len = elm.value.length;
+        
+        if(len !== 1 || len !== 3) {
+          if(e.keyCode == 47) {
+            e.preventDefault();
+          }
+        }
+        
+        if(len === 2) {
+          elm.value += '/';
+        }
+    
+        if(len === 5) {
+          elm.value += '/';
+        }
+      });
+    };
+      
+    dateInputMask(input);
+  </script>
+</body>
+</html>
