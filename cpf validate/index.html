@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="formulario">
+    <form name="cadastro" method="post">
+
+      <div class="campo">
+        <label id="cpf">CPF</label>
+        <input type="text" class="cpf" maxlength="11" name="CPF" placeholder="" required>
+        <label id="respostaCPF" class="animated shake">O CPF digitado não existe</label>
+      </div>
+
+     
+  
+      <input type="submit" value="Cadastrar">
+    </form>
+  </div>
+  <script>
+class Validacao {
+  validarCPF(strCPF) {
+    this.cpf = strCPF.replace(/\D/g, ""); 
+    let soma = 0;
+    let resto;
+    if (this.cpf == "00000000000") {
+      return false;
+    }
+
+    for (i = 1; i <= 9; i++) {
+      soma += parseInt(this.cpf.substring(i - 1, i)) * (11 - i);
+    }
+    resto = (soma * 10) % 11;
+
+    if (resto == 10 || resto == 11) {
+      resto = 0;
+    }
+    if (resto != parseInt(this.cpf.substring(9, 10))) {
+      return false;
+    }
+
+    soma = 0;
+    for (i = 1; i <= 10; i++) {
+      soma += parseInt(this.cpf.substring(i - 1, i)) * (12 - i);
+    }
+    resto = (soma * 10) % 11;
+
+    if (resto == 10 || resto == 11) {
+      resto = 0;
+    }
+    if (resto != parseInt(this.cpf.substring(10, 11))) {
+      return false;
+    }
+    return true;
+  }
+
+}
+const selectorAll = document.querySelectorAll.bind(document);
+function mascara(o, f) {
+  obj = o;
+  fun = f;
+  setTimeout("execmascara()", 1);
+}
+function execmascara() {
+  obj.value = fun(obj.value);
+}
+function validaCPF(v) {
+  v = v.replace(/\D/g, "");
+  v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, "$1.$2.$3-$4");
+  return v;
+}
+window.onload = () => {
+  let cpf = selectorAll(".cpf");
+  for (let i = 0; i < cpf.length; i++) {
+    cpf[i].onkeyup = function() {
+      mascara(this, validaCPF);
+    };
+  }
+
+};
+
+  </script>
+</body>
+</html>
