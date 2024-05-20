@@ -6,18 +6,38 @@
       <link rel='stylesheet' href='style.css' type='text/css' />
    </head>
    <body onload='document.form1.text1.focus()'>
-      <div class="mail">
-         <h2>Input an email and Submit</h2>
-         <form name="form1" action="#">
-            <ul>
-               <li><input type='text' name='text1'/></li>
-               <li>&nbsp;</li>
-               <li class="submit">
-                  <input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/></li>
-               <li>&nbsp;</li>
-            </ul>
+         <form action="#" id="form">
+           <div class="input-box">
+             <input type="text" name="" id="email" placeholder="Enter Email Address" onkeydown="validation()"><br>
+             <span id="text"></span>
+           </div>
          </form>
-      </div>
-      <script src="email-validation.js"></script>
+         <script>
+            function validation() {
+            let form = document.getElementById('form')
+            let email = document.getElementById('email').value
+            let text = document.getElementById('text')
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+            if (email.match(pattern)) {
+               form.classList.add('valid')
+               form.classList.remove('invalid')
+               text.innerHTML = "E-mail válido"
+               text.style.color = '#0000ff'
+            } else {
+               form.classList.remove('valid')
+               form.classList.add('invalid')
+               text.innerHTML = "Digite um e-mail valido"
+               text.style.color = '#ff0000'
+            }
+
+            if (email == '') {
+               form.classList.remove('valid')
+               form.classList.remove('invalid')
+               text.innerHTML = ""
+               text.style.color = '#00ff00'
+            }
+            }
+         </script>
    </body>
 </html>
