@@ -14,10 +14,10 @@
          </form>
          <script>
             function validation() {
-            let form = document.getElementById('form')
-            let email = document.getElementById('email').value
-            let text = document.getElementById('text')
-            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+            const form = document.getElementById('form')
+            const email = document.getElementById('email').value
+            const text = document.getElementById('text')
+            const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
             if (email.match(pattern)) {
                form.classList.add('valid')
