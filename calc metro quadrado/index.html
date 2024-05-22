@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>ola</p>
+  <script>
+    const metQuad = 3000;
+    const quantQuartos = 3;
+    const metragem = 10;
+
+    function calcMetroQuadrado(metQuad, quantQuartos){
+      if(quantQuartos == 1){        
+        const result = ((metQuad * 1) * metragem);
+        return result;
+      }else if (quantQuartos == 2){
+        const result = ((metQuad * 1.2) * metragem);
+        return result;
+      }else if (quantQuartos == 3){
+        const result = ((metQuad * 1.3) * metragem);
+        return result;
+      }
+    }
+
+    const resultado = calcMetroQuadrado(metQuad, quantQuartos);
+    console.log(`Preço do metro quadrado é: ${resultado}, tem ${quantQuartos}`);
+  </script>
+  
+</body>
+</html>
