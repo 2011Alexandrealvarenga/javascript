@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>ola</p>
+  <script>
+    const usuario = 'ale';
+    const senha = '123';
+    /*
+    const result = ((usuario == 'ale') && (senha == '123')) ? 'Pode acessar' : 'Usuario e senha invalidos';
+    */
+   const result = (usuario, senha)=>{
+    if((usuario == 'ale') && (senha == '123')){
+      console.log('Pode Acessar');
+    }else{
+      console.log('Usuario e senha invalidos');
+    }
+
+   }
+
+    result(usuario, senha);
+  </script>
+  
+</body>
+</html>
