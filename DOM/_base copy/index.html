@@ -6,9 +6,36 @@
   <title>Document</title>
 </head>
 <body>
-  <p>ola</p>
+  <p>tag</p><br>
+  <div class="teste">classe</div><br>
+  <div id="testando">id</div>
+
   <script>
+    // seleciona elemento por tag id, class e tag
+    // selecionando id
+    const identify = document.querySelector('#testando');
+    identify.addEventListener("click", ()=>{
+      console.log('clicou no id');
+    });
+
+    // selecionando classe
+    const selecClasse = document.querySelector('.teste');
+    selecClasse.addEventListener("click", ()=>{
+      console.log('clicou na classe');
+    });
     
+    // selecionando tag
+    const paragraph = document.querySelector('p');
+    paragraph.addEventListener("click", ()=>{
+      console.log('clicou na tag');
+
+    });
+
+
+
+
+    
+        
   </script>
   
 </body>
