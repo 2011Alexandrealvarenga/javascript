@@ -62,6 +62,35 @@
     console.log(fruits);
     */
    
+   
+    /*
+    let fruits = ['maça','goiaba','azeitona','mamao'];
+    // ordem alfabetica
+    fruits.sort();
+    // ordem decrescente
+    fruits.reverse();
+    console.log(fruits);
+    */
+
+    let cars = [
+      {brands: 'fiat', year: 2022},
+      {brands: 'argo', year: 2012},
+      {brands: 'bmw', year: 2024},
+    ]
+
+    // ordenação pelo ano
+    cars.sort((a, b) =>{
+      if(a.year > b.year){
+        return 1;
+      }else if(a.year < b.year){
+        return -1;
+      }else{
+        return 0;
+      }
+    });
+    console.log(cars);
+  
+
   </script>
   
 </body>
