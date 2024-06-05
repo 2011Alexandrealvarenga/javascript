@@ -100,11 +100,37 @@
     const testeId = document.querySelector('#teste');
     const ul = teste.querySelector('ul'); 
 
-    // cria um novo elemento
+    // cria um novo elemento no final
    const newLi = document.createElement('li');
    newLi.innerText = "item adicionado";
 
    ul.appendChild(newLi);
+  }
+  */
+ /*
+  function clicou(){
+    const testeId = document.querySelector('#teste');
+    const ul = teste.querySelector('ul'); 
+
+    // cria um novo elemento no inicio
+   const newLi = document.createElement('li');
+   newLi.innerText = "item adicionado";
+
+   ul.prepend(newLi);
+  }
+  */
+ /*
+  function clicou(){
+    const testeId = document.querySelector('#teste');
+    const ul = teste.querySelector('ul'); 
+    // insere texto depois do elemento
+    //  ul.after('texto qualquer');
+
+    // cria um elemento e insere texto dentro
+    const newButton = document.createElement('button');
+    newButton.innerHTML='botao novo';
+    ul.before(newButton);
+
   }
   */
   </script>
