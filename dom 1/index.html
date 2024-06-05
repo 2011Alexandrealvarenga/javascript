@@ -6,7 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-  <p>ola</p>
+
   <button onclick="clicou()">botao</button>
   <div id="teste">
     <ul>
@@ -131,6 +131,21 @@
     newButton.innerHTML='botao novo';
     ul.before(newButton);
 
+  }
+  */
+ /*
+  function clicou(){
+    const testeId = document.querySelector('#teste');
+    const ul = teste.querySelector('ul'); 
+
+    // cria lista e elementos dentro
+    let newUL = document.createElement('ul');
+    for(let i = 1; i <= 5; i++ ){
+      let newLi=document.createElement('li');
+      newLi.innerHTML = 'Item adicionado ' + i;
+      newUL.append(newLi);
+    }
+    ul.after(newUL);
   }
   */
   </script>
