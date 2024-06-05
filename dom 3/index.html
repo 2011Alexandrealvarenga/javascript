@@ -7,11 +7,17 @@
 </head>
 <body>
   <p>ola</p>
-  <button onclick="clicou()">CLIQUE</button>
+  <button class="chamar_botao">CLIQUE</button>
   <script>
+    
     function clicou(){
       alert('clicou no botão');
     }
+    
+
+    
+    const callButton = document.querySelector('.chamar_botao');
+    callButton.addEventListener('click', clicou);
   </script>
   
 </body>
