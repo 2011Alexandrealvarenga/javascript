@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="teste">
+    <ul>
+      <li>teste 1</li>
+      <li>teste 2</li>
+    </ul>
+  </div>
+  <button onclick="clicou()">botao</button>
+  <input type="text" name="algo" placeholder="Digite algo">
+
+<script>     
+  function clicou(){
+    const input = document.querySelector('input');
+    // pega o que tem no atributo
+    console.log(input.getAttribute('name'));
+    console.log(input.getAttribute('placeholder'));
+
+  }
+  </script>  
+</body>
+</html>
