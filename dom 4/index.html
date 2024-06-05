@@ -13,7 +13,8 @@
     </ul>
   </div>
   <button onclick="clicou()">botao</button>
-  <input type="text" name="algo" placeholder="Digite algo">
+  <input type="text" name="algo" placeholder="Digite algo"><br>
+  <input type="text" class="outroInput" value="digite sua senha">
 
 <script>     
   function clicou(){
@@ -34,6 +35,14 @@
 
     // insere atributo na tag
     input.setAttribute('value','agora é um botao');
+
+    // troca atributo de password para texto
+    const outroInput = document.querySelector('.outroInput');
+    if(outroInput.getAttribute('type') === 'text'){
+      outroInput.setAttribute('type','password');
+    }else{
+      outroInput.setAttribute('type','text');
+    }
 
 
   }
