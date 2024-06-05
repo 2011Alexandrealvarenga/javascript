@@ -44,7 +44,7 @@
    function clicou(){
      const testeId = document.querySelector('#teste');
      const ul = teste.querySelector('ul');
-     //alterar elemento  
+     //alterar elemento adiciona tag
      ul.innerHTML = "<li>elemento alterado</li>"
    }
    */
@@ -90,12 +90,23 @@
     const testeId = document.querySelector('#teste');
     const ul = teste.querySelector('ul'); 
 
-    // adiciona o conteudo ao que ja tem
+    // adiciona o conteudo ao que ja tem, funciona so pra texto
     ul.children[0].append(" alterado");
 
   }
   */
+ /*
+  function clicou(){
+    const testeId = document.querySelector('#teste');
+    const ul = teste.querySelector('ul'); 
 
+    // cria um novo elemento
+   const newLi = document.createElement('li');
+   newLi.innerText = "item adicionado";
+
+   ul.appendChild(newLi);
+  }
+  */
   </script>
   
 </body>
