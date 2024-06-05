@@ -6,15 +6,8 @@
   <title>Document</title>
 </head>
 <body>
-  <p>texto qualquer</p>
+  <p class="outraClasse">texto qualquer</p>
   <button onclick="clicou()">botao</button>
-
-  <div id="teste">
-    <ul>
-      <li>teste 1</li>
-      <li>teste 2</li>
-    </ul>
-  </div>
   <script>
     /*
     function clicou(){
@@ -28,9 +21,16 @@
     */
     function clicou(){
       const parag = document.querySelector('p'); 
+      
+      if(parag.classList.contains('outraClasse')){
+        parag.classList.remove('outraClasse');
+        // adiciona uma classe
+        parag.classList.add('mais');
+      }else{
+        parag.classList.add('outraClasse');
+        parag.classList.remove('mais');
 
-      // adiciona uma classe
-      parag.classList.add('outraClasse');
+      }
     }
   </script>
   
