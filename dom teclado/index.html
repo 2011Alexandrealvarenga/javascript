@@ -16,6 +16,7 @@
   onkeydown="apertou()" 
   onkeypress="segurou()" 
   onkeyup="soltou()">
+
   <script>
     function apertou(){
       console.log('apertou')
@@ -29,8 +30,8 @@
 
     }
 
-    // evento na tela toda
-    
+    // evento na tela toda tecla pra cima
+    document.addEventListener('keyup', soltou);
   </script>
   
 </body>
