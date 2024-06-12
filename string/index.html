@@ -12,9 +12,13 @@
 
     // retorna onde tem escrito tal coisa em uma variavel, se nao tiver valor retorna -1
     // let result = nome.indexOf('Alvarenga');
-    
-    // corta um pedaço da string de onde para onde
-    let result = nome.slice(2, 7);
+
+    // corta um pedaço da string de onde para onde, pode pegar numero negativo
+    // let result = nome.slice(2, 7);
+    // let result = nome.slice(-5, -2);
+
+    // pega de onde começa e quantos caracteres quer
+    let result = nome.substr(2, 7);
 
     console.log(result);
   </script>
