@@ -8,11 +8,33 @@
 <body>
   <h1>Javascript</h1>
   <script>
+    /*
     let num1 = [1,2,3,4,5];
     let total = [...num1,6,7,8,9,10];
 
     // concatena os arrays
     console.log(total);
+    */
+
+    /*
+    // concatenando objetos
+    let info = {
+      nome: 'Alexandre',
+      sobrenome: 'Alvarenga',
+      idade: 38,
+    }
+    let addInfo={
+      ...info,
+      cargo: 'Analista',
+    }
+    console.log(addInfo);
+    */
+
+    // na funcao passa os parametros independente da quantidade de itens
+    function dados(...nomes){
+      return nomes;
+    }
+    console.log(dados('alexandre','Alvarenga', 'Fernandes'));
     
   </script>
   
