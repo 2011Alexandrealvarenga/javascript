@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Javascript - upload imagens</h1>
+  
+  <input type="file" accept="image/*" id="imagem">
+  <button onclick="mostrar()">Mostrar</button>
+  <br>
+  <div id="area"></div>
+
+
+  <script>
+    function mostrar(){
+      let imagem = document.getElementById('imagem').files[0];
+      let img = document.createElement('img');
+
+      // elemento de url, cria url
+      img.src = URL.createObjectURL(imagem);
+      // largura da imagem
+      img.width = 200;
+
+      document.getElementById('area').appendChild(img);
+
+    }
+  </script>
+  
+</body>
+</html>
