@@ -6,8 +6,33 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Javascript</h1>
+  <h1>Javascript a a</h1>
+
+  <div class="formulario">
+    <input type="text" value="" class="vDigi">
+    <input type="text" value="" class="vDigi">
+    <br>
+    <button id="enviar">Enviar</button>
+  </div>
+
   <script>
+      
+      let button = document.querySelector('.formulario');
+      let input = document.querySelector('.vDigi');
+      
+      button.addEventListener('click', function(){
+        // verVazio();
+        input.addEventListener('input',(e)=>{
+          if(e.target.value === ''){
+            console.log(input, 'vazio');
+          }else{
+            console.log(input, 'nao vazio');
+          }
+        });
+      });
+      // function verVazio(e){
+
+      // }
     
   </script>
   

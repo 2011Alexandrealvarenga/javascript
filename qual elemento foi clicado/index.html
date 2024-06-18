@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .item{
+    padding: 8px;
+    border: 1px solid green;
+    width: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+</style>
+<body>
+  <h1>Javascript - item clicado</h1>
+
+  <div class="item">item 1</div>
+  <div class="item">item 2</div>
+  <div class="item">item 3</div>
+
+  <script>
+      
+
+      document.querySelectorAll('.item').forEach(item =>{
+        item.addEventListener('click', itemClick);
+      });
+
+      function itemClick(event){
+        console.log(event.target);
+      }
+   
+    
+  </script>
+  
+</body>
+</html>
