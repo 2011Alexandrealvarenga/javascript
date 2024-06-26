@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Javascript</h1>
+  <button id="print-button">Print Thib asdf </button>
+  <br>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia modi debitis corrupti facilis vel neque soluta possimus est maiores, voluptatum quas temporibus odio illo tempora error excepturi midoloremque eos tenetur assumenda hic laboriosam inventore mollitia! Amet, nesciunt adipisci!</p>
+  <div class="conteudo_imprimir">
+    <iframe src="https://www.bec.sp.gov.br/BEC_Servicos_UI/CadTerc/ui_CadTercSimuladorIndices2externo.aspx?chave=" title="" height="900px" width="800px" allowfullscreen="true"></iframe>
+  </div>
+
+    <script>
+      const callPrint = document.querySelector('#print-button');
+      
+      callPrint.addEventListener('click', ()=>{      
+      
+        const conteudo = document.querySelector('.conteudo_imprimir').innerHTML;
+
+        let estilo  = "<style>";
+          estilo   += ".conteudo_imprimir{width: 100px; height: 100px;}";
+          estilo  += "</style>";
+
+
+          let wind = window.open('','', 'height=700,width=900');
+
+          wind.document.write('<html>')
+          wind.document.write('<head>')
+          wind.document.write('<title>Impressão</title>')
+          wind.document.write(estilo)
+          wind.document.write('</head>')
+          wind.document.write('<body>')
+          wind.document.write(conteudo)
+          wind.document.write('</body></html>')
+
+        wind.print();
+        console.log('testando');
+      });
+
+
+      
+</script>
+</body>
+</html>
