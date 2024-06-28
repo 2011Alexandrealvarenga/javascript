@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get HTML Structure on Button Click</title>
+</head>
+<body>
+  <div id="content">
+    <h1>pega a estrutura html, pega o conteudo html</h1>
+    <p>This is a paragraph.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+  
+  <button id="getHtmlButton">Get HTML Structure</button>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the button element
+      var button = document.getElementById('getHtmlButton');
+  
+      // Add click event listener
+      button.addEventListener('click', function() {
+        // Get the element whose HTML structure you want to retrieve
+        var element = document.getElementById('content');
+        
+        // Check if the element exists
+        if (element) {
+          // Get the HTML structure of the element
+          var htmlStructure = element.outerHTML;
+          
+          // Log the HTML structure to console (for demonstration)
+          console.log(htmlStructure);
+          
+          // You can also display the HTML structure in an alert or use it otherwise
+          // Example of displaying in an alert
+          alert('HTML Structure:\n' + htmlStructure);
+        } else {
+          // Handle case where element is not found
+          console.error('Element not found');
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>
