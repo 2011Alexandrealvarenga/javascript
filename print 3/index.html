@@ -15,7 +15,7 @@
   <p class="paragrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia modi debitis corrupti facilis vel neque soluta possimus est maiores, voluptatum quas temporibus odio illo tempora error excepturi minus similique exercitationem officia iste beatae. Saepe laudantium magnam rerum porro corrupti eaque dolor, consequatur sapiente aliquam aspernatur suscipit voluptates reprehenderit placeat quos assumenda quas nisi quo ad excepturi facilis odit, odio fugiat deleniti. Ab, quasi recusandae voluptate vitae minus tempora quidem sit a. Perspiciatis quod cupiditate exercitationem rem ipsa ducimus fugit doloribus ut quis velit nam, voluptas accusamus, ipsum maxime veritatis doloremque eos tenetur assumenda hic laboriosam inventore mollitia! Amet, nesciunt adipisci!</p>
   <div class="conteudo_imprimir">
     testando uma nova pagina    
-    <!-- <iframe src="https://www.bec.sp.gov.br/BEC_Servicos_UI/CadTerc/ui_CadTercSimuladorIndices2externo.aspx?chave=" title="" height="900px" width="800px" allowfullscreen="true"></iframe> -->
+    <iframe src="https://www.bec.sp.gov.br/BEC_Servicos_UI/CadTerc/ui_CadTercSimuladorIndices2externo.aspx?chave=" title="" height="900px" width="100%" allowfullscreen="true"></iframe>
   </div>
 
     <script>
@@ -23,6 +23,7 @@
       let paragrafo = document.querySelector('.paragrafo');
       
       callPrint.addEventListener('click', printPage);      
+      
       function printPage(){ 
         let conteudo = document.querySelector('.conteudo_imprimir').innerHTML;
 
