@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Javascript inserir atributo important</h1>
+  <button>botao</button>
+  <div class="atributoImportant">
+    Lorem ipsum dolor sit amet.
+  </div>
+  <script>
+    const button = document.querySelector('button');
+    const important = document.querySelector('.atributoImportant');
+
+    button.addEventListener('click', function(){
+      important.style.setProperty('display','none','important');
+      console.log('teste');
+    })
+
+    
+  </script>
+  
+</body>
+</html>
