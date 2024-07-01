@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Javascrip </h1>
+
+  <button>mudar</button>
+  <script>
+
+    // encurtar o document.query selector
+    const qS = (elemento)=>{
+      return document.querySelector(elemento);
+    }
+    const h1 = qS('h1');
+    const button = qS('button');
+
+    //executa ao atualizar a tela 
+    window.addEventListener('load', ()=>{
+      h1.style.color = 'green';
+    })
+
+
+
+  </script>
+  
+</body>
+</html>
