@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Javascript - pegar dados no objeto e jogar no html</h1>
+  <div id="user-list"></div>
+  <script src="script.js"></script>
+  <script>  
+    const userListDiv = document.querySelector('#user-list');
+
+    users.forEach(user =>{
+      const userDiv = document.createElement('div');
+      userDiv.classList.add('user');
+
+      userDiv.innerHTML = `
+        <hr>
+        <span>Nome: ${user.name}</span>
+        <span>Idade: ${user.age}</span>
+        <span>Cidade: ${user.city}</span>
+      `
+      userListDiv.appendChild(userDiv);
+    });
+
+  </script>  
+</body>
+</html>
