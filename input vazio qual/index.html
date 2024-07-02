@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>Javascript - Verifica qual input esta vazio</h1>
+
+  <div class="formulario">    
+    <input type="text" class="item 1">
+    <input type="text" class="item 2">
+    <button>enviar</button>
+  </div>
+
+  <script>
+    const botao = document.querySelector('button');    
+    const inputs = document.querySelectorAll('input');
+
+    botao.addEventListener('click', verificar);
+
+    function verificar(){
+      Array.from(inputs).forEach(input => {
+        if (input.value.trim() === '') {
+          console.log(`is empty`);
+          input.style.border = '3px solid green';
+        }else{
+          console.log(`tem valor ${input.value} `);
+        }
+      });
+    }
+
+  </script>
+</body>
+</html>
