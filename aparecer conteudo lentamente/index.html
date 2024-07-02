@@ -14,9 +14,11 @@
   <script>
     function show(){
       document.querySelector('.content').style.opacity = 0;
+
       setTimeout(function(e){
         document.querySelector('.content').style.display = 'block';
       }, 300)
+      
       document.querySelector('.content').style.opacity = 1;
     }
   </script>

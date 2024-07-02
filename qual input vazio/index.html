@@ -7,38 +7,28 @@
 </head>
 <body>
 
-  <h1>Javascript</h1>
+  <h1>Javascript - verifica se o input esta vazio</h1>
 
   <div class="formulario">    
     <input type="text" class="item 1">
-    <input type="text" class="item 2">
-
     <button id="enviar">Enviar</button>
   </div>
 
   <script>
-    // seleciona o item de varios elementos, tipo input
-    let items = document.querySelectorAll(`.item`);
-
+    let items = document.querySelector(`.item`);
     let btn = document.querySelector('#enviar');
 
-    btn.addEventListener('click', ()=>{
+    btn.addEventListener('click', itemClick);
+   
+    function itemClick(){
 
-      items.forEach(item =>{
-        item.addEventListener('click', (e)=>{
-          let clickItem = e.target;
-
-          if
-          console.log(clickItem);
-        })
-      });
-
-    });
-
-
-
-      
+      if(items.value.trim() !== ''){
+        console.log('tem valor');
+      }else{
+        console.log('vazio');
+      }
+    
+    }
   </script>
-  
 </body>
 </html>
