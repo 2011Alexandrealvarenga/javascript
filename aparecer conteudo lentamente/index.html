@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>.content{border: 1px solid black;display: none; transition: all ease 1s;width: 300px;}</style>
+<body>
+  <h1>Javascript - aparecer conteudo lentamente</h1>
+  <button onclick="show()">click</button><br><br>
+  <div class="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, reprehenderit?</div>
+
+  <script>
+
+    function show(){
+      document.querySelector('.content').style.opacity = 0;
+      setTimeout(function(e){
+        document.querySelector('.content').style.display = 'block';
+      }, 300)
+      document.querySelector('.content').style.opacity = 1;
+    }
+  </script>
+  
+</body>
+</html>
