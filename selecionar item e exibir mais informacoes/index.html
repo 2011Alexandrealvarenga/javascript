@@ -17,6 +17,8 @@
     </div>
   </div>
   <div class="right">
+    <div class="name"></div>
+    <div class="desc"></div>
   </div>
 </div>
   <script src="pizza.js"></script>
@@ -26,7 +28,21 @@
       const pizzaitem = document.querySelector('.pizza-item').cloneNode(true);
 
       pizzaitem.querySelector('.pizza-item--name').innerHTML = item.name;
-      document.querySelector('.left').append(pizzaitem)
+      document.querySelector('.left').append(pizzaitem);
+
+      // identificando a pizza, inserindo um atributo data-key"index" 
+      pizzaitem.setAttribute('data-key', index);
+
+      
+      // clica o item da pizza selecionada
+      pizzaitem.querySelector('.pizza-item a').addEventListener('click', (e)=>{
+        e.preventDefault();
+        // acha o item mais proximo ao pizza item
+        const key = e.target.closest('.pizza-item').getAttribute('data-key');
+
+        document.querySelector('.name').innerHTML = pizzaJson[key].name;
+        document.querySelector('.desc').innerHTML = pizzaJson[key].description;
+      })
 
     })
     
