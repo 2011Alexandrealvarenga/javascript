@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <h1>Javascript - click aumentar e diminuir</h1>
+  <span>0</span>
+  <button id="mais">+</button>
+  <button id="menos">-</button>
+
+  <script>
+    let valor = 0;
+
+    let mais = document.querySelector('#mais');
+    let menos = document.querySelector('#menos');
+
+    menos.addEventListener('click', ()=>{
+      if(valor >= 1){
+        valor--;
+        document.querySelector('span').innerHTML = valor ;
+      }else{
+        console.log('menor que 1');
+      }
+
+    })
+    mais.addEventListener('click', ()=>{
+      valor++;
+      document.querySelector('span').innerHTML = valor;
+      console.log('mais');
+    })
+    
+  </script>
+  
+</body>
+</html>
