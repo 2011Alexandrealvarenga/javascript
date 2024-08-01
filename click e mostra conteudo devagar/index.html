@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Content Slowly</title>
+    <style>
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            border: 1px solid black;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item" onclick="toggleContent('content1')">Click to Toggle Content 1</div>
+        <div class="content" id="content1">
+            <p>This is the content for item 1. It will be revealed slowly when the item is clicked.</p>
+        </div>
+        
+        <div class="item" onclick="toggleContent('content2')">Click to Toggle Content 2</div>
+        <div class="content" id="content2">
+            <p>This is the content for item 2. It will be revealed slowly when the item is clicked.</p>
+        </div>
+    </div>
+    <script>
+        function toggleContent(contentId) {
+            const content = document.getElementById(contentId);
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
