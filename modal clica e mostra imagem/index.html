@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <style>
+    .modalCExemplo {
+        display: none; 
+        position: fixed; 
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content-cExemplo {
+        background-color: #fefefe;
+        margin: 15% auto; 
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; 
+    }
+
+    .closeCExemplo {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .closeCExemplo:hover,
+    .closeCExemplo:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .content {
+      width: 200px;
+      border: 1px solid green;
+  }
+  p {
+      text-align: start;
+  }
+.icon{width: 16px;}
+  </style>
+
+<button id="callExemplo">Open Image</button>
+<div class="content">
+
+  <p>Atenção! Para agilizar o atendimento, sugerimos que anexe o documento seguindo o modelo a seguir. Clique no ícone para visualizar <img class="icon" src="https://compras.sp.gov.br/wp-content/uploads/2024/08/icons8-pesquisar.svg" ></p>
+</div>
+<div id="modalExemplo" class="modalCExemplo">
+    <div class="modal-content-cExemplo">
+        <span class="closeCExemplo">&times;</span>
+        <img src="https://compras.sp.gov.br/wp-content/uploads/2024/08/compras-fale-conosco-exemplo-de-anexo.jpg" alt="Modal Image">
+    </div>
+</div>
+
+<script>
+  const modalCExemplo = document.getElementById("modalExemplo");
+  const btnCExemplo = document.getElementById("callExemplo");
+  const spanCExemplo = document.getElementsByClassName("closeCExemplo")[0];
+
+  btnCExemplo.onclick = function() {
+      modalCExemplo.style.display = "block";
+  }
+
+  spanCExemplo.onclick = function() {
+      modalCExemplo.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      if (event.target == modalCExemplo) {
+          modalCExemplo.style.display = "none";
+      }
+  }
+
+</script>
+</body>
+</html>

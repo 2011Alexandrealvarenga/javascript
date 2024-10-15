@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Reveal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  #hiddenContent {
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: opacity 1s ease, height 1s ease;
+  }
+
+  #hiddenContent.show {
+      opacity: 1;
+      height: auto;
+  }
+
+  .hidden {
+      display: none;
+  }
+
+</style>
+<body>
+    <button id="revealButton">Show More</button>
+    <div id="hiddenContent" class="hidden">
+        <p>This is the content that will be revealed slowly.</p>
+    </div>
+<script>
+  // script.js
+  document.addEventListener('DOMContentLoaded', () => {
+      const revealButton = document.getElementById('revealButton');
+      const hiddenContent = document.getElementById('hiddenContent');
+
+      revealButton.addEventListener('click', () => {
+          // Toggle the visibility of the content
+          if (hiddenContent.classList.contains('hidden')) {
+              hiddenContent.classList.remove('hidden');
+              // Trigger reflow to ensure the transition is applied
+              hiddenContent.offsetHeight; // Trigger reflow
+              hiddenContent.classList.add('show');
+          } else {
+              hiddenContent.classList.remove('show');
+              // Ensure the transition occurs before hiding
+              setTimeout(() => {
+                  hiddenContent.classList.add('hidden');
+              }, 1000); // Match the duration of the CSS transition
+          }
+      });
+  });
+
+</script>
+</body>
+</html>

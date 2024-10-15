@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Changer</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    <p>Another paragraph.</p>
+    <button id="increase">Increase Font Size</button>
+    <button id="decrease">Decrease Font Size</button>
+
+    <script>
+      const increaseButton = document.getElementById('increase');
+      const decreaseButton = document.getElementById('decrease');
+
+      function increaseFontSize() {
+          const elements = document.querySelectorAll('p, h1');
+          elements.forEach(element => {
+              const currentSize = window.getComputedStyle(element).fontSize;
+              const currentSizeValue = parseFloat(currentSize);
+              element.style.fontSize = (currentSizeValue + 2) + 'px';
+          });
+      }
+
+      function decreaseFontSize() {
+          const elements = document.querySelectorAll('p, h1');
+          elements.forEach(element => {
+              const currentSize = window.getComputedStyle(element).fontSize;
+              const currentSizeValue = parseFloat(currentSize);
+              element.style.fontSize = (currentSizeValue - 2) + 'px';
+          });
+      }
+
+      increaseButton.addEventListener('click', increaseFontSize);
+      decreaseButton.addEventListener('click', decreaseFontSize);
+
+    </script>
+</body>
+</html>
