@@ -12,6 +12,7 @@
     border: 1px solid green;
     background-color: yellow;
     display: none;
+    transition: all ease 2s;
   }
 </style>
 <body>
@@ -24,9 +25,9 @@
     window.onload = function(){
 
       squade.style.opacity = 0;
+      squade.style.display = 'block';
       setTimeout(()=>{
         squade.style.opacity = 1;
-        squade.style.display = 'block';
         console.log('teste');
       }, 1000);
     }
