@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+.chat-container {
+  max-width: 300px;
+  position: relative;
+  margin-left: 20px; /* Optional: Space from the left */
+}
+
+.chat-message {
+  margin: 10px 0;
+}
+
+.chat-bubble {
+  background: #e1ffc7;
+  border-radius: 10px;
+  padding: 10px 15px;
+  position: relative;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.chat-bubble p {
+  margin: 0;
+  color: #333;
+}
+
+.chat-bubble::after {
+  content: '';
+  position: absolute;
+  top: 15px; 
+  right: 100%; 
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #e1ffc7 transparent transparent;
+}
+</style>
+<body>
+  <div class="chat-container">
+    <div class="chat-message">
+      <div class="chat-bubble">
+        <p>Hello! How are you?</p>
+      </div>
+    </div>
+  </div>
+   
+</body>
+</html>

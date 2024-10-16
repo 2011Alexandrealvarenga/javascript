@@ -1,9 +1,5 @@
-var modal = document.getElementById("myModal");
-
-var btn = document.getElementById("openModalBtn");
-
+var modal = document.getElementById("modal_Home");
 var span = document.getElementsByClassName("close")[0];
-
 
 span.onclick = function() {
   modal.style.display = "none";
