@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Class Example</title>
+    <style>
+        .item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .new {
+            background-color: yellow; /* Highlight for demonstration */
+        }
+    </style>
+</head>
+<body>
+
+<div class="item">Item 1</div>
+<div class="item">Item 2</div>
+<button id="toggleButton">Toggle New Class</button>
+
+<script>
+  // adiciona classe em varios itens como toggle
+    // Select the button and all elements with the class 'item'
+    const button = document.getElementById('toggleButton');
+    const items = document.querySelectorAll('.item');
+
+    // Add a click event listener to the button
+    button.addEventListener('click', () => {
+        // Loop through the NodeList and toggle the 'new' class on each item
+        items.forEach(item => {
+            item.classList.toggle('new');
+        });
+    });
+</script>
+
+</body>
+</html>
