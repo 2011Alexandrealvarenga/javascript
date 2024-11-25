@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar e Ocultar Conteúdo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <style>
+    #conteudo1 {
+    display: none; 
+    padding: 10px;
+    background-color: lightblue;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+  </style>
+    <button id="botao1">Passe o mouse aqui</button>
+    <div id="conteudo1" class="conteudo">
+        Este é o conteúdo que aparece quando você passa o mouse sobre o botão.
+    </div>
+
+<script>
+  const botao = document.getElementById('botao1');
+const conteudo = document.getElementById('conteudo1');
+// ao passr o mouse exibe conteudo
+botao.addEventListener('mouseover', function() {
+    conteudo.style.display = 'block'; // Mostrar o conteúdo
+});
+
+botao.addEventListener('mouseout', function() {
+    conteudo.style.display = 'none'; // Ocultar o conteúdo
+});
+</script>
+  </body>
+</html>
