@@ -38,7 +38,7 @@
   <section class="content-botoes">
     <div class="botao">
       <div class="seta">^</div>
-      <p>aciona 1</p>
+      <p>aciona 1321</p>
     </div>
     <div class="botao">
       <div class="seta">^</div>
@@ -50,6 +50,19 @@
     </div>
   </section>
   <!-- quatro itens passa o mouse e aparece o item correspondente -->
+   <script>
+    // const itemContent = document.querySelector('.item');
+    const items = document.querySelector('.botao');
 
+    items.forEach(item =>{
+      item.addEventListener('click', function() {
+        items.forEach(item => {
+          item.classList.remove('selected');
+        });
+
+        this.classList.add('selected');
+      });
+    });
+   </script>
 </body>
 </html>
