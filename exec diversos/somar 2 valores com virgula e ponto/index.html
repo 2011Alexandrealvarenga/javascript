@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <span id="valorSpan">20.000,00</span>
+  <input type="text" id="valorInput" value="10.500,50">
+  <button onclick="somarValores()">Somar</button>
+  <p id="resultado"></p>
+
+<script>
+  function somarValores() {
+  // Função para formatar o valor e converter em número
+    function formatarValor(valor) {
+      // Remove o ponto (milhar) e substitui a vírgula (decimal) por ponto
+      return parseFloat(valor.replace('.', '').replace(',', '.'));
+    }
+
+  // Obtém o valor do span e do input
+  var valorSpan = document.getElementById('valorSpan').textContent;
+  var valorInput = document.getElementById('valorInput').value;
+
+  // Converte os valores para número
+  var valorSpanNumero = formatarValor(valorSpan);
+  var valorInputNumero = formatarValor(valorInput);
+
+  // Soma os valores
+  var resultado = valorSpanNumero + valorInputNumero;
+
+  // Exibe o resultado
+  document.getElementById('resultado').textContent = 'Resultado: ' + resultado.toFixed(2);
+}
+
+</script>  
+</body>
+</html>
