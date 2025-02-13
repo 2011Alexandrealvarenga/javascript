@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ícone que Gira</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  .icon-container {
+    font-size: 50px; 
+    cursor: pointer; 
+    transition: transform 0.5s; 
+    width: 30px;
+}
+
+.rotated {
+    transform: rotate(180deg); /* Aplica a rotação de 180 graus */
+}
+
+</style>
+<body>
+
+    <div>
+        <img src="arrow-bottom.svg" class="icon-container">
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome -->
+    <script>
+
+        const icon = document.querySelector('.icon-container');
+        icon.addEventListener('click', function(){
+          icon.classList.toggle('rotated');
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+  function calcularParcelasComJuros(saldoDevedor, jurosMensal, numParcelas) {
+      let saldoRestante = saldoDevedor;
+      let parcelas = [];
+      
+      for (let i = 0; i < numParcelas; i++) {
+          // Aplica os juros sobre o saldo restante
+          let juros = saldoRestante * jurosMensal;
+          
+          // O valor da parcela será o saldo restante mais os juros
+          let parcela = saldoRestante + juros;
+          
+          // Adiciona o valor da parcela à lista
+          parcelas.push(parcela.toFixed(2));
+          
+          // Subtrai o valor da parcela paga do saldo devedor
+          saldoRestante = saldoRestante - parcela;
+          
+          // Se o saldo restante ficar negativo, finaliza a dívida
+          if (saldoRestante <= 0) {
+              break;
+          }
+      }
+
+      return parcelas;
+  }
+
+  // Teste para uma dívida de 1000, 10% de juros ao mês e 10 parcelas
+  let resultado = calcularParcelasComJuros(1000, 0.10, 10);
+  console.log("Valores das parcelas: ", resultado);
+
+
+  </script>
+</body>
+</html>

@@ -13,6 +13,9 @@
     margin-bottom: 10px;
     text-align: center;
   }
+  .bg{
+    background-color: yellow;
+  }
 </style>
 <body>
   <h1>Javascript - item clicado</h1>
@@ -29,6 +32,7 @@
 
       function itemClick(event){
         console.log(event.target);
+        event.target.classList.add('bg');
       }
    
     

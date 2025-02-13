@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="calcular" onclick="calcular()">calcular</button>
+  <script>
+
+  function calcular(){
+  // 1000 saldo devedor / 10 num parcelas * 10 juros em cima do saldo devedor 
+   let saldoDevedor = 1000;
+   let numParcelas = 20;
+   let juros = 10;
+   
+
+    // for(let i = 0; i < numParcelas; i++){
+
+      jurosMensal = ((saldoDevedor * juros)/100);
+      // juros mensal () = saldo devedor * juros / 100
+      // juros mensal = 100
+      valorParcela = saldoDevedor / numParcelas;
+      //100 = 1000 / 10
+      valorParcelaMJuros = jurosMensal + valorParcela;
+      // 200 = 100 + 100
+
+      valTotalTodasParcelas = valorParcelaMJuros * numParcelas; 
+      //2000 = 200 * 10
+
+    // }
+
+
+   console.log(valTotalTodasParcelas);
+  }
+
+
+  </script>
+</body>
+</html>

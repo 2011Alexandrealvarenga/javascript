@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplicar valor</title>
+</head>
+<body>
+    <h2>Multiplicar valor do input pelo valor do rádio</h2>
+
+    <!-- Input para inserir um valor -->
+    <label for="valorInput">Digite um valor: </label>
+    <input type="number" id="valorInput" />
+
+    <br><br>
+
+    <!-- Radio buttons para escolher o valor -->
+    <label for="radio10">10</label>
+    <input type="radio" name="multiplicador" id="radio10" value="10" />
+    <label for="radio100">100</label>
+    <input type="radio" name="multiplicador" id="radio100" value="100" />
+
+    <br><br>
+
+    <!-- Botão para calcular -->
+    <button onclick="calcular()">Calcular</button>
+
+    <br><br>
+
+    <!-- Exibição do resultado -->
+    <p id="resultado">Resultado: </p>
+
+    <script>
+        function calcular() {
+            // Pega o valor inserido no input
+            var valorInput = document.getElementById('valorInput').value;
+            
+            // Verifica se algum valor foi inserido
+            if (valorInput === '') {
+                alert('Por favor, insira um número no input.');
+                return;
+            }
+            
+            // Pega o valor do radio button selecionado
+            var multiplicador = document.querySelector('input[name="multiplicador"]:checked');
+            
+            // Verifica se algum rádio foi selecionado
+            if (!multiplicador) {
+                alert('Por favor, selecione um valor de multiplicador.');
+                return;
+            }
+
+            // Converte o valor inserido no input para número
+            valorInput = parseFloat(valorInput);
+
+            // Pega o valor do rádio selecionado
+            var valorRadio = parseFloat(multiplicador.value);
+
+            // Calcula o resultado
+            var resultado = valorInput * valorRadio;
+
+            // Exibe o resultado
+            document.getElementById('resultado').textContent = "Resultado: " + resultado;
+        }
+    </script>
+</body>
+</html>

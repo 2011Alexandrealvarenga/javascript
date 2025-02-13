@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="valor" value="1000"> vl imovel<br>
+  <input type="text" id="entrada" value="100" >entrada<br>
+  <input type="text" id="juros" value="10"  >juros <br>
+  <span id="vlparcela">vl parcela</span><br>
+  <div class="">
+    <input type="radio" id="10" name="multiplicador" value="10">
+    <label for="10">10x</label><br>
+    <input type="radio" id="16" name="multiplicador" value="16">
+    <label for="16">16x</label><br>
+  </div>
+  <span id="vlTotalTodasParcelas">vl total de todas as parcelas</span><br>
+<button onclick="calcular()">Calcular</button>
+<script>
+  function calcular(){
+    const valor = document.querySelector('#valor').value;
+    const entrada = document.querySelector('#entrada').value;
+    const juros = document.querySelector('#juros').value;
+
+    const mult = document.querySelector('input[name="multiplicador"]:checked');
+    const qtdParc = parseFloat(mult.value);
+
+     
+    const saldo =  valor - entrada; 
+    const vlJuros = ((parseFloat(saldo) * juros)/100);
+
+
+    const vlParc = saldo / qtdParc;
+
+    const vlParcMaisJuros = vlParc + vlJuros;
+
+    const vlTotalTodasParcelas = vlParcMaisJuros * qtdParc;
+
+    document.querySelector('#vlparcela').textContent = 'Valor da parcela ' + vlParcMaisJuros;
+    document.querySelector('#vlTotalTodasParcelas').textContent = 'Valor da parcela ' + vlTotalTodasParcelas;
+    // 100 + 20
+    // 120 /100
+
+
+    console.log(qtdParc);
+  }
+
+// valor imovel 1000
+// entrada 100
+// qtd parc 10
+// juros 10%
+// 
+</script>
+</body>
+</html>
