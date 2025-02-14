@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Class</title>
+    <style>
+        .caixa {
+            width: 100px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .content{
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+        }
+        .abriu {
+            max-height: 200px; /* Ajuste conforme o tamanho do conteúdo */
+            opacity: 1;
+        }
+        .botao {
+            width: 30px;
+            height: 30px;
+            border: 1px solid red;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out; /* Adicionando transição para a rotação */
+        }
+        .rotated {
+            transform: rotate(180deg); /* Aplica a rotação de 180 graus */
+        }
+    </style>
+</head>
+<body>
+<div class="caixa">
+  <div class="content">
+    12345655 Lorem ipsum dolor sit amet.
+  </div>
+    <img src="arrow-bottom.svg" class="botao">
+</div>
+<div class="caixa">
+  <div class="content">
+    Lorem ipsum dolor sit amet.
+  </div>
+  <img src="arrow-bottom.svg" class="botao">
+</div>
+
+<script>
+    const contents = document.querySelectorAll('.content');
+    const botoes = document.querySelectorAll('.botao');
+
+    botoes.forEach((botao, index) => {
+        botao.addEventListener('click', () => {
+            contents.forEach(content => {
+              content.classList.remove('abriu');
+            });
+            botoes.forEach(botao => {
+                botao.classList.remove('rotated');
+            });
+              
+            contents[index].classList.add('abriu');
+            botoes[index].classList.add('rotated');
+        });
+    });
+
+</script>
+</body>
+</html>
