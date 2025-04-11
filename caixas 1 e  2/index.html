@@ -10,11 +10,11 @@
             border: 1px solid black;
             margin: 10px;
         }
-        .content{
-          max-height: 0;
-          opacity: 0;
-          overflow: hidden;
-          transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+        .content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
         }
         .abriu {
             max-height: 200px; /* Ajuste conforme o tamanho do conteúdo */
@@ -37,7 +37,7 @@
   <div class="content">
     12345655 Lorem ipsum dolor sit amet.
   </div>
-    <img src="arrow-bottom.svg" class="botao">
+  <img src="arrow-bottom.svg" class="botao">
 </div>
 <div class="caixa">
   <div class="content">
@@ -47,23 +47,46 @@
 </div>
 
 <script>
-    const contents = document.querySelectorAll('.content');
+ const contents = document.querySelectorAll('.content');
     const botoes = document.querySelectorAll('.botao');
 
     botoes.forEach((botao, index) => {
         botao.addEventListener('click', () => {
+            // Verifica se o conteúdo clicado já está aberto
+            const contentAberto = contents[index].classList.contains('abriu');
+
+            // Fecha todos os conteúdos e remove a rotação dos botões
             contents.forEach(content => {
-              content.classList.remove('abriu');
+                content.classList.remove('abriu');
             });
             botoes.forEach(botao => {
                 botao.classList.remove('rotated');
             });
-              
-            contents[index].classList.add('abriu');
-            botoes[index].classList.add('rotated');
+
+            // Se o conteúdo não estava aberto, abre ele e rotaciona o botão
+            if (!contentAberto) {
+                contents[index].classList.add('abriu');
+                botoes[index].classList.add('rotated');
+            }
         });
     });
 
+    // const contents = document.querySelectorAll('.content');
+    // const botoes = document.querySelectorAll('.botao');
+
+    // botoes.forEach((botao, index) => {
+    //     botao.addEventListener('click', () => {
+    //         contents.forEach(content => {
+    //           content.classList.remove('abriu');
+    //         });
+    //         botoes.forEach(botao => {
+    //             botao.classList.remove('rotated');
+    //         });
+              
+    //         contents[index].classList.add('abriu');
+    //         botoes[index].classList.add('rotated');
+    //     });
+    // });
 </script>
 </body>
 </html>

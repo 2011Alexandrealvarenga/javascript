@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal de Imagem</title>
+  <style>
+   .content-modal #modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0);
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.5s ease; 
+    }
+    
+   .content-modal #modal.show {
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.7); 
+    }
+    
+   .content-modal .modal-content {
+      position: relative;
+      background-color: #fff; 
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      max-width: 35%;
+      max-height: 65%;
+      opacity: 0; 
+      transform: scale(0.9); 
+      transition: all 0.3s ease 0.2s; 
+    }
+    
+   .content-modal #modal.show .modal-content {
+      opacity: 1; 
+      transform: scale(1); 
+    }
+    
+   .content-modal .modal-content .img-banner {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 5px;
+    }
+    
+    .content-modal .close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      color: #333;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      width: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Modal -->
+<section class="content-modal">
+  <div id="modal">
+    <div class="modal-content">
+      <img src="https://www.procon.sp.gov.br/wp-content/plugins/popup-builder/public/img/theme_6/close.png" class="close" alt="Fechar">
+      <a href="https://sistemas.procon.sp.gov.br/formularios/index.php?r=survey/index/sid/202513/lang/pt-BR#">      
+        <img src="https://www.procon.sp.gov.br/wp-content/uploads/2024/08/pop-up-pesquisa-dia-das-maes.png" class="img-banner" alt="Imagem Modal">
+      </a>
+    </div>
+  </div>
+</section>
+<script>
+  // Função para definir o cookie
+  function setCookie(name, value, days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000)); 
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+
+  // Função para obter o valor do cookie
+  function getCookie(name) {
+    const cname = name + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(cname) === 0) {
+        return c.substring(cname.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  // Função para fechar o modal
+  function closeModalHome() {
+    const modal = document.getElementById("modal");
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 500); // Espera a transição terminar
+    
+    setCookie("modalVisto", "sim", 365);
+    
+    // Remove os event listeners
+    document.querySelector(".close").removeEventListener("click", closeModalHome);
+    window.removeEventListener("click", outsideClick);
+  }
+
+  // Fecha o modal se clicar fora da imagem
+  function outsideClick(event) {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+      closeModalHome();
+    }
+  }
+
+  // Exibe o modal com delay e animação
+  window.onload = function () {
+    if (getCookie("modalVisto") !== "sim") {
+      setTimeout(() => {
+        const modal = document.getElementById("modal");
+        modal.style.display = "flex";
+        // Força o navegador a processar o display: flex antes de adicionar a classe
+        setTimeout(() => {
+          modal.classList.add("show");
+        }, 10);
+        
+        // Adiciona os event listeners
+        document.querySelector(".close").addEventListener("click", closeModalHome);
+        window.addEventListener("click", outsideClick);
+      }, 2000); // 2 segundos de delay
+    }
+  };
+</script>
+
+</body>
+</html>

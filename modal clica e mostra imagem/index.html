@@ -9,7 +9,7 @@
 <body>
   <style>
     .modalCExemplo {
-        display: none; 
+        /* display: none;  */
         position: fixed; 
         z-index: 1;
         left: 0;
@@ -21,7 +21,7 @@
         background-color: rgba(0,0,0,0.4);
     }
 
-    .modal-content-cExemplo {
+    .modalCExemplo .modal-content-cExemplo {
         background-color: #fefefe;
         margin: 15% auto; 
         padding: 20px;
@@ -29,21 +29,21 @@
         width: 80%; 
     }
 
-    .closeCExemplo {
+    .modalCExemplo .modal-content-cExemplo .closeCExemplo {
         color: #aaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
     }
 
-    .closeCExemplo:hover,
-    .closeCExemplo:focus {
+    .modalCExemplo .modal-content-cExemplo .closeCExemplo:hover,
+    .modalCExemplo .modal-content-cExemplo .closeCExemplo:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
     }
 
-    img {
+    /* img {
         max-width: 100%;
         height: auto;
     }
@@ -54,10 +54,10 @@
   p {
       text-align: start;
   }
-.icon{width: 16px;}
+.icon{width: 16px;} */
   </style>
 
-<button id="callExemplo">Open Image</button>
+<button id="call_modal">Open Image</button>
 <div class="content">
 
   <p>Atenção! Para agilizar o atendimento, sugerimos que anexe o documento seguindo o modelo a seguir. Clique no ícone para visualizar <img class="icon" src="https://compras.sp.gov.br/wp-content/uploads/2024/08/icons8-pesquisar.svg" ></p>
@@ -65,13 +65,35 @@
 <div id="modalExemplo" class="modalCExemplo">
     <div class="modal-content-cExemplo">
         <span class="closeCExemplo">&times;</span>
-        <img src="https://compras.sp.gov.br/wp-content/uploads/2024/08/compras-fale-conosco-exemplo-de-anexo.jpg" alt="Modal Image">
+        <div class="content">
+            <div class="content_title">
+                <h2 class="title">SAÚDE - ANIMAIS DE ESTIMAÇÃO</h2>
+            </div>
+            <div class="content_description">
+                <span>1. O que deve ser observado na aquisição de animais em canis ou pet-shops?</span>
+                <p>O consumidor deve solicitar além de recibo ou nota fiscal, a elaboração de  um contrato, onde conste no mínimo os seguintes itens:</p>
+                <ul>
+                    <li>Informações gerais sobre o animal como origem, nome, idade, peso, sexo, raça, cor predominante, sinais identificadores, etc;</li>
+                    <li>O pedigree, principalmente cães e gatos, bem como o prazo para entrega do certificado de origem que possa garanti-lo;</li>
+                    <li>Vacinas que já foram ministradas e o cronograma das demais;</li>
+                    <li>Outros cuidados a serem observados.</li>
+                </ul>
+                <p>Eventuais garantias mencionadas pelo vendedor devem também constar do contrato de compra firmado.&nbsp;Em caso de morte ou doença, é indispensável a realização de necrópsia e exames por um veterinário, para o caso de se pretender a troca, desconto proporcional ou a devolução do valor pago pelo animal.</p>
+                <strong>Evite adquirir animais em praças, parques, feiras e exposições,</strong><span>
+                    pois é comum o consumidor encontrar dificuldades em contactar o criador após a compra. Porém, se esta for a forma de aquisição, identifique o endereço do canil ou criador e faça uma visita ao local, verificando as condições de higiene e cuidados dispensados aos mesmos, como restrições de espaço, acúmulo de fezes e resíduos de comida, situações que prejudicam a saúde do animal.
+                </span>
+                <strong>2. O que deve ser observado na hora da compra de produtos para higiene do meu bichinho?</strong>
+                <p>Na compra de produtos como shampoos, anti-pulgas, entre outros o consumidor deve sempre consultar o profissional veterinário responsável pelo tratamento do animal, verificando se existe indicação de uso. Da mesma forma deve verificar os dados constantes da rotulagem/bula do produto&nbsp;como validade, fabricante, modo de utilização e eventuais restrições e/ou precauções a serem observadas antes de sua utilização.</p>
+
+
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
   const modalCExemplo = document.getElementById("modalExemplo");
-  const btnCExemplo = document.getElementById("callExemplo");
+  const btnCExemplo = document.getElementById("call_modal");
   const spanCExemplo = document.getElementsByClassName("closeCExemplo")[0];
 
   btnCExemplo.onclick = function() {
